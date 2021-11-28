@@ -53,3 +53,61 @@ function getDigits() {
     }
     alert(`Number of digits is ${numDigits}`);
 };
+function getStatistics() {
+    let negativeNumber = 0;
+    let plusesNumber = 0;
+    let zeroNumber = 0;
+    let evenNumber = 0;
+    let oddNumber = 0;
+    let i = 0;
+    while (i < 10) {
+        i++;
+        let n = Number(prompt("Enter the number for statistics", ""));
+        if (n % 2 == 0) {
+            evenNumber = evenNumber + 1;
+        } else oddNumber = oddNumber + 1;
+
+        if (n == 0) {
+            zeroNumber = zeroNumber + 1;
+        } else if (n < 0) {
+            negativeNumber = negativeNumber + 1;
+        } else plusesNumber = plusesNumber + 1;
+    }
+    alert(`Even numbers ${evenNumber}, Odd numbers ${oddNumber}, Negative numbers ${negativeNumber}, Pluses numbers ${plusesNumber}, Zero numbers ${zeroNumber}`);
+};
+function getCalculation() {
+    while (true) {
+        let a = +prompt('Enter the first number');
+        let b = +prompt('Enter the second number');
+        let operation = prompt('Select an action sign - + / *');
+        let action = {
+            '+': () => a + b,
+            '-': () => a - b,
+            '/': () => a / b,
+            '*': () => a * b
+        }[operation];
+        if (action) alert(action());
+
+        if (!confirm('Do you want to solve another example?')) break;
+    }
+};
+function showMoveNumber() {
+    let getNumber = +prompt('Enter number');
+    let m = +prompt('Зсув');
+    let str = String(getNumber);
+    let lenghtStr = str.length;
+    let resultNumber = "";
+
+    for (let i = m; i < lenghtStr; i++) {
+        resultNumber += str[i];
+    };
+    let i = 0;
+    while (i < m) {
+
+        resultNumber += str[i];
+        i++;
+    };
+
+    alert(`Result number ${resultNumber}`)
+};
+
