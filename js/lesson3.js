@@ -93,7 +93,7 @@ function getCalculation() {
 };
 function showMoveNumber() {
     let getNumber = +prompt('Enter number');
-    let m = +prompt('Зсув');
+    let m = +prompt('Shift');
     let str = String(getNumber);
     let lenghtStr = str.length;
     let resultNumber = "";
@@ -101,7 +101,7 @@ function showMoveNumber() {
     for (let i = m; i < lenghtStr; i++) {
         resultNumber += str[i];
     };
-    let i = 0;
+    i = 0;
     while (i < m) {
 
         resultNumber += str[i];
@@ -109,5 +109,13 @@ function showMoveNumber() {
     };
 
     alert(`Result number ${resultNumber}`)
+};
+function showDay() {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let currDay = 0;
+
+    while (confirm(`${days[currDay]}. Want to see the next day?`)) {
+        currDay = (currDay + 1) % days.length;
+    }
 };
 
