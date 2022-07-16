@@ -112,10 +112,25 @@ function showMoveNumber() {
 };
 function showDay() {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    let currDay = 0;
+    let currDay = prompt('What day to start?');
 
     while (confirm(`${days[currDay]}. Want to see the next day?`)) {
         currDay = (currDay + 1) % days.length;
+    }
+};
+function showTable() {
+    let num = 0;
+    for (let i = 1; i < 10; i++) {
+        for (let j = 1; j < 10; j++) {
+            num = i * j;
+            if (num / 10 < 1) {
+                num = "&nbsp;&nbsp;" + i * j;
+            }
+            if (j <= i) {
+                document.write(j + "*" + i + "=" + num + "&nbsp;&nbsp;&nbsp;&nbsp;");
+            }
+        }
+        document.write("<br>");
     }
 };
 
