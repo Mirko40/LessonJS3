@@ -146,7 +146,7 @@ function guessNumber() {
             if (resault == true) {
                 startN = N;
             } else endN = N;
-        } else alert(`Result number: ${N} Number of attempts:${i}`);
+        } else alert(`Your number is: ${N}\nNumber of attempts: ${i}`);
         i = 10;
     };
 };
