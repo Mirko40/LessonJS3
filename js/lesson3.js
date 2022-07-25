@@ -120,7 +120,7 @@ function showDay() {
 };
 function showTable() {
     let num = 0;
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 11; i++) {
         for (let j = 1; j < 10; j++) {
             num = i * j;
             if (num / 10 < 1) {
@@ -140,14 +140,17 @@ function guessNumber() {
     let endN = 100;
     for (let i = 1; i < 10; i++) {
         let N = Math.round((startN + endN) / 2);
-        let resault = confirm(`Your number is ${N}?`)
+        let resault = confirm(`Your number is ${N}?`);
         if (resault == false) {
             resault = confirm(`Your number > ${N}?`)
             if (resault == true) {
                 startN = N;
             } else endN = N;
-        } else alert(`Your number is: ${N}\nQuantity of attempts: ${i}`);
-        i = 10;
+        } else {
+            alert(`Your number is: ${N}\nQuantity of attempts: ${i}`);
+            i = 10;
+        };
+
     };
 };
 
