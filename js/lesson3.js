@@ -139,7 +139,7 @@ function guessNumber() {
     let startN = 0;
     let endN = 100;
     for (let i = 1; i < 10; i++) {
-        let N = Math.round((startN + endN) / 2);
+        let N = Math.trunc((startN + endN) / 2);
         let resault = confirm(`Your number is ${N}?`);
         if (resault == false) {
             resault = confirm(`Your number > ${N}?`)
